@@ -1,4 +1,4 @@
-package com.mybank.example.training.service;
+package com.mybank.users.service;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-import com.mybank.example.training.UserRepository;
-import com.mybank.example.training.model.User;
+import com.mybank.users.model.User;
+import com.mybank.users.repository.UserRepository;
+
 
 @Service
 public class UserServiceImpl implements UserService {

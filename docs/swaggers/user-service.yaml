@@ -1,0 +1,96 @@
+swagger: "2.0"
+info:
+  description: "User Service API"
+  version: "1.0.0"
+  title: "User Service API"
+basePath: /api/users
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /users/{userId}:
+    get:
+      summary: "Get a user by ID"
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            $ref: "#/definitions/User"
+    put:
+      summary: "Update an existing user"
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          type: integer
+          format: int64
+        - name: updatedUser
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/UserInput"
+      responses:
+        200:
+          description: "User updated successfully"
+    delete:
+      summary: "Delete a user by ID"
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          type: integer
+          format: int64
+      responses:
+        204:
+          description: "User deleted successfully"
+  /users:
+    get:
+      summary: "Get a list of all users"
+      responses:
+        200:
+          description: "Successful response"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/User"
+    post:
+      summary: "Create a new user"
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/UserInput"
+      responses:
+        201:
+          description: "User created successfully"
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      username:
+        type: string
+      email:
+        type: string
+  UserInput:
+    type: object
+    properties:
+      username:
+        type: string
+      email:
+        type: string
+    required:
+      - username
+      - email

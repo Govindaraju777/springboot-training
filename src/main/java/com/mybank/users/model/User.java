@@ -1,4 +1,4 @@
-package com.mybank.example.training.model;
+package com.mybank.users.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 

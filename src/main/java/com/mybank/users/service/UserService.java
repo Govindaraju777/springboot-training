@@ -1,8 +1,8 @@
-package com.mybank.example.training.service;
+package com.mybank.users.service;
 
 import java.util.List;
 
-import com.mybank.example.training.model.User;
+import com.mybank.users.model.User;
 
 public interface UserService {
     User getUserById(String id);

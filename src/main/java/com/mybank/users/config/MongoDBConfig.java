@@ -1,4 +1,4 @@
-package com.mybank.example.training.config;
+package com.mybank.users.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
